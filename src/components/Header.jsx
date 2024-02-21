@@ -47,11 +47,11 @@ function Header() {
               ))
             : null}
         </ul>
-        <div className="flex gap-4">
+        <div className="flex gap-4 text-black">
           <Button
             name="Sign Up"
             path={"/signup"}
-            className="bg-white hover:bg-zinc-400/10 text-black"
+            className="text-black hover:bg-zinc-400/10"
           />
           <Button name="Log In" path={"/login"} />
         </div>
