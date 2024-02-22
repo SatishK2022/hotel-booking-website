@@ -1,5 +1,5 @@
 import React from 'react'
-import { Hero, OurFacilities, PopularHotels, OurHistory } from '../components'
+import { Hero, OurFacilities, PopularHotels, OurHistory, Contact } from '../components'
 
 function Home() {
   return (
@@ -8,6 +8,7 @@ function Home() {
         <PopularHotels />
         <OurFacilities />
         <OurHistory />
+        <Contact />
     </div>
   )
 }

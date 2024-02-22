@@ -8,6 +8,7 @@ import PopularHotels from "./PopularHotels";
 import Card from "./Card";
 import OurFacilities from "./OurFacilities";
 import OurHistory from "./OurHistory";
+import Contact from "./Contact";
 
 export {
     Header,
@@ -19,5 +20,6 @@ export {
     PopularHotels,
     Card,
     OurFacilities,
-    OurHistory
+    OurHistory,
+    Contact
 }

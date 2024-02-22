@@ -9,8 +9,8 @@ const navItems = [
     path: "/",
   },
   {
-    name: "Facilities",
-    path: "/",
+    name: "All Hotels",
+    path: "/all-hotels",
   },
   {
     name: "About Us",

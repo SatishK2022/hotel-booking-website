@@ -5,7 +5,7 @@ import Button from "./Button";
 
 function OurHistory() {
   return (
-    <Container>
+    <Container className="py-20">
       <div className="flex items-center gap-8 bg-green-50 rounded-2xl">
         <div className="w-1/2">
           <img src={ourHistoryImg} alt="Hotel Image" />

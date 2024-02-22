@@ -15,11 +15,10 @@ function PopularHotels() {
     const data = await res.json();
     const limitData = data.slice(0, 3);
     setHotels(limitData);
-    console.log(hotels);
   }
 
   return (
-    <Container>
+    <Container className="py-20">
       <div className="flex flex-col gap-5">
         <h1 className="text-4xl font-bold text-zinc-700">
           Our Most Popular Hotels

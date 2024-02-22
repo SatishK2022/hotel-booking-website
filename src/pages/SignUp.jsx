@@ -48,13 +48,13 @@ function SignUp() {
               />
             </div>
             <Button
-              name="Login now"
+              name="Create Account"
               type="submit"
               className="text-white rounded-md text-center mt-5"
             />
             <Button2
-              name={`Continue With Google`}
-              className="bg-blue-200 hover:bg-blue-300 text-blue-700 text-center rounded-md"
+              name={`Continue with Google`}
+              className="bg-blue-100 hover:bg-blue-200 text-blue-600 text-center rounded-md"
             />
 
             <p className="text-center text-slate-500">
