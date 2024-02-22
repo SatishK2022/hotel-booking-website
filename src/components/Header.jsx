@@ -53,7 +53,7 @@ function Header() {
             path={"/signup"}
             className="text-zinc-800 bg-white hover:bg-zinc-400/10"
           />
-          <Button name="Log In" path={"/login"} />
+          <Button name="Log In" path={"/login"} className="text-white" />
         </div>
       </div>
     </Container>

@@ -1,0 +1,56 @@
+import React, { useEffect, useState } from "react";
+import { Button2, Card, Container } from "./index";
+
+function PopularHotels() {
+  const [hotels, setHotels] = useState([]);
+
+  useEffect(() => {
+    getHotels();
+  }, []);
+
+  async function getHotels() {
+    const res = await fetch(
+      "https://cbs-paradise-waste-purple.trycloudflare.com/api/v1/hotels"
+    );
+    const data = await res.json();
+    const limitData = data.slice(0, 3);
+    setHotels(limitData);
+    console.log(hotels);
+  }
+
+  return (
+    <Container>
+      <div className="flex flex-col gap-5">
+        <h1 className="text-4xl font-bold text-zinc-700">
+          Our Most Popular Hotels
+        </h1>
+        <div className="flex items-center justify-between">
+          <p className="w-1/2 text-zinc-600">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa quae
+            alias nostrum ab quasi? At, repellat! Sit voluptatem ullam
+            laboriosam!
+          </p>
+          <Button2
+            name="View All"
+            path={"/"}
+            className="bg-green-100 hover:bg-green-200 text-green-600"
+          />
+        </div>
+        <div className="w-full flex flex-wrap gap-2 items-center justify-between">
+          {hotels &&
+            hotels.map((hotel) => (
+              <Card
+                name={hotel?.name}
+                address={hotel?.address}
+                image={hotel?.images[0]}
+                desc={hotel?.description}
+                rating={hotel?.rating}
+              />
+            ))}
+        </div>
+      </div>
+    </Container>
+  );
+}
+
+export default PopularHotels;
