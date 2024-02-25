@@ -20,22 +20,22 @@ function PopularHotels() {
   return (
     <Container className="py-20">
       <div className="flex flex-col gap-5">
-        <h1 className="text-4xl font-bold text-zinc-700">
+        <h1 className="text-3xl lg:text-4xl font-bold text-zinc-700">
           Our Most Popular Hotels
         </h1>
         <div className="flex items-center justify-between">
-          <p className="w-1/2 text-zinc-600">
+          <p className="w-full lg:w-1/2 text-sm lg:text-base text-zinc-600">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Culpa quae
             alias nostrum ab quasi? At, repellat! Sit voluptatem ullam
             laboriosam!
           </p>
           <Button2
             name="View All"
-            path={"/"}
-            className="bg-green-100 hover:bg-green-200 text-green-600"
+            path={"/all-hotels"}
+            className="bg-green-100 hover:bg-green-200 text-green-600 hidden lg:block"
           />
         </div>
-        <div className="w-full flex flex-wrap gap-2 items-center justify-between">
+        <div className="w-full flex flex-wrap gap-8 lg:gap-2 items-center justify-between">
           {hotels &&
             hotels.map((hotel) => (
               <Card

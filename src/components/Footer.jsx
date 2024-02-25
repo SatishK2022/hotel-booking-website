@@ -7,8 +7,8 @@ import { Link } from "react-router-dom";
 
 function Footer() {
   return (
-    <Container className="bg-zinc-800 text-white py-10">
-      <div className="grid grid-cols-4">
+    <Container className="bg-zinc-800 text-white py-12 lg:py-10">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-0">
         <div>
           <Link to={"/"}>
             <img className="w-40 mb-3" src={logo} alt="Logo" />
@@ -45,7 +45,7 @@ function Footer() {
             </a>
           </div>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col lg:items-center">
           <h2 className="font-semibold mb-4">Home</h2>
           <ul className="text-sm flex flex-col gap-2">
             <li>
@@ -82,7 +82,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col lg:items-center">
           <h2 className="font-semibold mb-4">Help</h2>
           <ul className="text-sm flex flex-col gap-2">
             <li>
@@ -119,7 +119,7 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col lg:items-center">
           <h2 className="font-semibold mb-4">Get the App</h2>
           <ul className="text-sm flex flex-col gap-2">
             <li>

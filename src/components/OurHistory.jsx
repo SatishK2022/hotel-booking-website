@@ -6,15 +6,19 @@ import Button from "./Button";
 function OurHistory() {
   return (
     <Container className="py-20">
-      <div className="flex items-center gap-8 bg-green-50 rounded-2xl">
-        <div className="w-1/2">
-          <img src={ourHistoryImg} alt="Hotel Image" />
+      <div className="flex flex-col lg:flex-row items-center lg:gap-8 bg-green-50 rounded-2xl">
+        <div className="w-full lg:w-1/2">
+          <img
+            src={ourHistoryImg}
+            alt="Hotel Image"
+            className="rounded-md lg:rounded-none"
+          />
         </div>
-        <div className="w-1/2 p-8">
-          <h2 className="text-5xl font-bold text-zinc-700">
+        <div className="w-full lg:w-1/2 p-4 lg:p-8">
+          <h2 className="text-3xl lg:text-5xl font-bold text-zinc-700">
             Discover Our History
           </h2>
-          <div className="py-6 flex flex-col gap-4 mb-4">
+          <div className="py-6 text-sm lg:text-base flex flex-col gap-4 mb-4">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis,
               consequuntur. Lorem ipsum dolor sit amet consectetur, adipisicing
@@ -27,7 +31,11 @@ function OurHistory() {
               adipisicing elit. Officiis, laboriosam!
             </p>
           </div>
-          <Button name="Explore More" path={"/"} className="text-white" />
+          <Button
+            name="Explore More"
+            path={"/"}
+            className="text-white text-sm lg:text-base"
+          />
         </div>
       </div>
     </Container>

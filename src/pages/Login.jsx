@@ -6,9 +6,9 @@ function Login() {
   return (
     <>
       <Container>
-        <div className="flex items-center justify-center py-10">
-          <form className="h-auto flex flex-col gap-3  w-1/3">
-            <h2 className="text-3xl font-bold text-zinc-700 mb-2">
+        <div className="flex items-center justify-center py-5 lg:py-10">
+          <form className="h-auto flex flex-col gap-3 w-full sm:w-2/3 lg:w-1/3">
+            <h2 className="text-3xl font-bold text-center text-zinc-700 mb-2">
               Login to Your Account
             </h2>
             <div className="flex flex-col">

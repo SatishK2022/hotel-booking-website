@@ -14,30 +14,30 @@ function Hero() {
   return (
     <Container className="py-0 relative">
       <div className="w-full flex bg-green-50 rounded-t-[45px] ">
-        <div className="w-1/2 p-8 flex flex-col pt-36">
-          <h1 className="text-5xl text-zinc-800 font-extrabold">
+        <div className="w-full lg:w-1/2 p-8 flex flex-col lg:pt-36">
+          <h1 className="text-4xl lg:text-5xl text-zinc-800 font-extrabold">
             Find your perfecet place to stay
           </h1>
-          <p className="text-base py-5">
+          <p className="text-sm lg:text-base py-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
             dolor error aspernatur quibusdam molestias ipsum? Lorem, ipsum dolor
             sit amet consectetur adipisicing elit. Voluptas placeat ipsum sit
             quia qui ducimus nemo nostrum dignissimos veritatis aperiam!
           </p>
           <button className="flex items-center gap-2 font-semibold">
-            <div className="p-2 rounded-full grid place-items-center bg-white">
+            <div className="p-2 rounded-full text-sm lg:text-base grid place-items-center bg-white">
               <FaPlay className="text-green-600" size={15} />
             </div>{" "}
             Watch Video
           </button>
         </div>
-        <div className="w-1/2">
+        <div className="hidden lg:block w-1/2">
           <img src={heroImage} alt="HotelImage" />
         </div>
       </div>
 
       {/* Booking Section */}
-      <div className="flex items-center justify-center">
+      <div className="hidden lg:flex items-center justify-center">
         <div className="flex items-center justify-between pl-10 bg-white shadow-xl w-4/5 absolute bottom-10 rounded-full">
           <div className="border-r-2 pr-5 border-zinc-200">
             <div className="flex items-center gap-2 font-semibold">
