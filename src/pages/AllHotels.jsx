@@ -21,7 +21,7 @@ function AllHotels() {
       <h2 className="font-bold text-3xl text-zinc-700 text-center py-8">
         All Hotels ({hotels.length})
       </h2>
-      <div className="w-full flex flex-wrap gap-5 items-center justify-between>">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-between>">
         {hotels &&
           hotels.map((hotel) => (
             <Card

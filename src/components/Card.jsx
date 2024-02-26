@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 
 function Card({ address, name, image, desc, rating }) {
   return (
-    <div className="w-full sm:w-[45%] md:w-[32%] h-[30rem] hover:shadow-xl duration-500 ease-in-out transition-all bg-zinc-100/50 rounded-2xl ">
+    <div className="w-full h-[30rem] hover:shadow-xl duration-500 ease-in-out transition-all bg-zinc-100/50 rounded-2xl ">
       <div className="rounded-t-2xl overflow-hidden">
         <img
           src={image}

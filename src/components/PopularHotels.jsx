@@ -13,7 +13,7 @@ function PopularHotels() {
       "https://cbs-paradise-waste-purple.trycloudflare.com/api/v1/hotels"
     );
     const data = await res.json();
-    const limitData = data.slice(0, 3);
+    const limitData = data.slice(0, 4);
     setHotels(limitData);
   }
 
@@ -35,7 +35,7 @@ function PopularHotels() {
             className="bg-green-100 hover:bg-green-200 text-green-600 hidden lg:block"
           />
         </div>
-        <div className="w-full flex flex-wrap gap-8 lg:gap-2 items-center justify-between">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 items-center justify-between">
           {hotels &&
             hotels.map((hotel) => (
               <Card

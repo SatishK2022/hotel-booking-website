@@ -47,7 +47,7 @@ const ourFacilities = [
 function OurFacilities() {
   return (
     <Container className="py-20">
-      <div className="lg:h-[20rem] grid gap-5 grid-cols-1 lg:grid-cols-3">
+      <div className="lg:h-[20rem] grid lg:gap-5 grid-cols-1 lg:grid-cols-3">
         <div className="col-span-1 flex flex-col gap-5">
           <h2 className="text-3xl lg:text-4xl font-bold text-zinc-700">
             We provide our best facilities to you.
@@ -64,7 +64,7 @@ function OurFacilities() {
             className="text-white text-center text-sm lg:text-base"
           />
         </div>
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-0 py-0 col-span-2">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5 mt-0 py-5 col-span-2">
           {ourFacilities &&
             ourFacilities.map((card) => (
               <div

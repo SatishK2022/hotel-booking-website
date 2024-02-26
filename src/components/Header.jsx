@@ -35,12 +35,16 @@ function Header() {
     setIsMenuOpen(!isMenuOpen);
   };
 
+  const handleMenuClose = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <Container>
       <div className="flex items-center justify-between">
         <div>
           <Link to={"/"}>
-            <img className="w-40" src={logo} alt="Logo" />
+            <img className="w-32 lg:w-40" src={logo} alt="Logo" />
           </Link>
         </div>
         <ul className="hidden lg:flex items-center gap-8">
@@ -72,13 +76,13 @@ function Header() {
         </div>
 
         {isMenuOpen && (
-          <div className="absolute inset-x-0 top-0 z-50 origin-top-right transform p-2 transition lg:hidden">
+          <div className="absolute inset-x-0 top-0 z-50 origin-top-right transform p-2 transition-all lg:hidden">
             <div className="divide-y-2 divide-gray-50 rounded-lg bg-white shadow-lg ring-1 ring-black ring-opacity-5">
               <div className="px-5 pb-6 pt-5">
                 <div className="flex items-center justify-between">
                   <div className="inline-flex items-center space-x-2">
                     <Link to={"/"}>
-                      <img className="w-40" src={logo} alt="Logo" />
+                      <img className="w-32 lg:w-40" src={logo} alt="Logo" />
                     </Link>
                   </div>
                   <div className="-mr-2">
@@ -98,6 +102,7 @@ function Header() {
                       <Link
                         key={item.name}
                         to={item.path}
+                        onClick={handleMenuClose}
                         className="-m-3 flex items-center rounded-md p-3 text-sm font-semibold hover:bg-gray-50"
                       >
                         <span className="ml-3 text-base font-medium text-gray-900">
@@ -109,11 +114,13 @@ function Header() {
                       <Button
                         name="Sign Up"
                         path={"/signup"}
-                        className="text-zinc-800 bg-white hover:bg-zinc-400/10"
+                        onClick={handleMenuClose}
+                        className="text-zinc-800 bg-zinc-400/10 hover:bg-zinc-400/20 lg:bg-white lg:hover:bg-zinc-400/10"
                       />
                       <Button
                         name="Log In"
                         path={"/login"}
+                        onClick={handleMenuClose}
                         className="text-white"
                       />
                     </div>

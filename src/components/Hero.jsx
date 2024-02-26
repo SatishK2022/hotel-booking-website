@@ -14,11 +14,11 @@ function Hero() {
   return (
     <Container className="py-0 relative">
       <div className="w-full flex bg-green-50 rounded-t-[45px] ">
-        <div className="w-full lg:w-1/2 p-8 flex flex-col lg:pt-36">
-          <h1 className="text-4xl lg:text-5xl text-zinc-800 font-extrabold">
+        <div className="w-full lg:w-1/2 p-8 flex flex-col lg:pt-36 items-center lg:items-start">
+          <h1 className="text-4xl lg:text-5xl text-center lg:text-left text-zinc-700 font-extrabold">
             Find your perfecet place to stay
           </h1>
-          <p className="text-sm lg:text-base py-5">
+          <p className="text-sm lg:text-base text-center lg:text-left py-5">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto
             dolor error aspernatur quibusdam molestias ipsum? Lorem, ipsum dolor
             sit amet consectetur adipisicing elit. Voluptas placeat ipsum sit
