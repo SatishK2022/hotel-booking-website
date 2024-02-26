@@ -13,7 +13,7 @@ function PopularHotels() {
       "https://cbs-paradise-waste-purple.trycloudflare.com/api/v1/hotels"
     );
     const data = await res.json();
-    const limitData = data.slice(0, 4);
+    const limitData = data.slice(0, 3);
     setHotels(limitData);
   }
 
