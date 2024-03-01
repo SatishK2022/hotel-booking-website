@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Button2, Card, Container } from "./index";
+import axios from "axios";
 
 function PopularHotels() {
   const [hotels, setHotels] = useState([]);
@@ -9,10 +10,8 @@ function PopularHotels() {
   }, []);
 
   async function getHotels() {
-    const res = await fetch(
-      "https://cbs-paradise-waste-purple.trycloudflare.com/api/v1/hotels"
-    );
-    const data = await res.json();
+    const res = await axios(import.meta.env.VITE_APP_URL + "/api/v1/hotels");
+    const data = await res.data;
     const limitData = data.slice(0, 3);
     setHotels(limitData);
   }

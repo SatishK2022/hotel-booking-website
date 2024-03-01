@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Container, Card } from "../components";
+import axios from "axios";
 
 function AllHotels() {
   const [hotels, setHotels] = useState([]);
@@ -9,10 +10,8 @@ function AllHotels() {
   }, []);
 
   async function getHotels() {
-    const res = await fetch(
-      "https://cbs-paradise-waste-purple.trycloudflare.com/api/v1/hotels"
-    );
-    const data = await res.json();
+    const res = await axios(import.meta.env.VITE_APP_URL +"/api/v1/hotels");
+    const data = await res.data;
     setHotels(data);
   }
 

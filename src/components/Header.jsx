@@ -1,9 +1,11 @@
-import React from "react";
+import { toast } from "react-hot-toast";
+import React, { useEffect } from "react";
 import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import { Button, Container } from "./index";
 import { FiMenu } from "react-icons/fi";
 import { AiOutlineClose } from "react-icons/ai";
+import axios from "axios";
 
 const navItems = [
   {
@@ -30,6 +32,9 @@ const navItems = [
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+
+  const URL = import.meta.env.VITE_APP_URL_AUTH;
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -38,6 +43,38 @@ function Header() {
   const handleMenuClose = () => {
     setIsMenuOpen(false);
   };
+
+  const handleLogOut = async () => {
+    const response = await axios({
+      method: "POST",
+      url: URL + "/users/logout",
+      withCredentials: true,
+    });
+
+    if (response.data.statusCode == "200") {
+      toast.success("Logout Successfully");
+      window.location.reload();
+      navigate("/");
+    }
+
+    setIsLoggedIn(false);
+  };
+
+  const checkLoggedIn = async () => {
+    const response = await axios({
+      method: "POST",
+      url: URL + "/users/refresh-token",
+      withCredentials: true,
+    });
+
+    if (response.data.statusCode == "200") {
+      setIsLoggedIn(true);
+    }
+  };
+
+  useEffect(() => {
+    checkLoggedIn();
+  }, [handleLogOut]);
 
   return (
     <Container>
@@ -59,14 +96,25 @@ function Header() {
               ))
             : null}
         </ul>
-        <div className="hidden lg:flex gap-4">
-          <Button
-            name="Sign Up"
-            path={"/signup"}
-            className="text-zinc-800 bg-white hover:bg-zinc-400/10"
-          />
-          <Button name="Log In" path={"/login"} className="text-white" />
-        </div>
+        {isLoggedIn ? (
+          <div className="hidden lg:flex">
+            <button
+              onClick={handleLogOut}
+              className="font-semibold px-8 py-3 rounded-full transition-all duration-200 ease-in-out bg-red-500 hover:bg-red-600 text-white"
+            >
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div className="hidden lg:flex gap-4">
+            <Button
+              name="Sign Up"
+              path={"/signup"}
+              className="text-zinc-800 bg-white hover:bg-zinc-400/10"
+            />
+            <Button name="Log In" path={"/login"} className="text-white" />
+          </div>
+        )}
         <div className="lg:hidden">
           <FiMenu
             onClick={toggleMenu}
@@ -110,20 +158,31 @@ function Header() {
                         </span>
                       </Link>
                     ))}
-                    <div className="flex flex-col text-center lg:hidden w-full gap-4">
-                      <Button
-                        name="Sign Up"
-                        path={"/signup"}
-                        onClick={handleMenuClose}
-                        className="text-zinc-800 bg-zinc-400/10 hover:bg-zinc-400/20 lg:bg-white lg:hover:bg-zinc-400/10"
-                      />
-                      <Button
-                        name="Log In"
-                        path={"/login"}
-                        onClick={handleMenuClose}
-                        className="text-white"
-                      />
-                    </div>
+                    {isLoggedIn ? (
+                      <div className="flex flex-col text-center lg:hidden w-full gap-4">
+                        <button
+                          onClick={handleLogOut}
+                          className="font-semibold px-8 py-3 rounded-full bg-red-500 text-white"
+                        >
+                          Logout
+                        </button>
+                      </div>
+                    ) : (
+                      <div className="flex flex-col text-center lg:hidden w-full gap-4">
+                        <Button
+                          name="Sign Up"
+                          path={"/signup"}
+                          onClick={handleMenuClose}
+                          className="text-zinc-800 bg-zinc-400/10 hover:bg-zinc-400/20 lg:bg-white lg:hover:bg-zinc-400/10"
+                        />
+                        <Button
+                          name="Log In"
+                          path={"/login"}
+                          onClick={handleMenuClose}
+                          className="text-white"
+                        />
+                      </div>
+                    )}
                   </nav>
                 </div>
               </div>
